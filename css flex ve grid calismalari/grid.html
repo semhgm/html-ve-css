@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 16px;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-areas: "header  header header"
+                "sidebar  content content"
+                "sidebar content2  content3"
+                "footer footer footer ";
+
+
+            background: brown;
+            padding: 20px;
+        }
+
+        @media (max-width:768px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: "header header"
+                    "sidebar content"
+                    "sidebar content2"
+                    "content3 content3"
+                    "footer footer ";
+
+                padding: 10px;
+
+                background: brown;
+            }
+
+            .content3 {
+                grid-area: content3;
+                /* add this line to explicitly set the grid area for content3 */
+                align-self: stretch;
+            }
+
+        }
+
+        @media (max-width:500px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+
+                grid-template-areas: "header"
+                    "sidebar"
+                    "content"
+                    "content2"
+                    "content3"
+                    "footer  ";
+                padding: 1px;
+
+
+                background: brown;
+            }
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .sidebar {
+
+            grid-area: sidebar;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .footer {
+
+            grid-area: footer;
+        }
+
+        .item {
+            background-color: goldenrod;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container ">
+        <div class="header item">
+            <h1>Lorem, ipsum.</h1>
+        </div>
+        <div class="sidebar item">
+            <ul>
+                <li>java</li>
+                <li>javascript</li>
+                <li>html</li>
+                <li>css </li>
+            </ul>
+        </div>
+        <div class="content item">
+            <h2>Lorem, ipsum dolor.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sed voluptas aperiam necessitatibus
+                neque consequuntur delectus non! Quaerat reprehenderit voluptatem hic. Repudiandae laboriosam saepe
+                accusamus facilis quo blanditiis sunt pariatur.
+                Debitis consectetur obcaecati assumenda explicabo maiores soluta modi fugit nihil aliquam eos. Pariatur
+                sint iusto ea omnis sit eaque. Id pariatur et quae dignissimos cupiditate neque eius sequi, dolore enim?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, molestias est quaerat possimus molestiae
+                accusamus voluptate illum expedita saepe eius tenetur. Cupiditate labore iste perspiciatis amet nam,
+                minus iusto accusamus omnis aliquid veritatis, incidunt saepe quaerat fugiat excepturi reprehenderit in.
+            </p>
+
+        </div>
+        <div class="content2 item">
+            <h2>Lorem, ipsum dolor.</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia maxime illum dolor at nam velit omnis
+                quo? Aspernatur, molestias! Perspiciatis.</p>
+        </div>
+        <div class="content3 item">
+            <h2>Lorem, ipsum dolor.</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia maxime illum dolor at nam velit omnis
+                quo? Aspernatur, molestias! Perspiciatis.</p>
+        </div>
+        <div class="footer item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit. Vel explicabo beatae,
+                voluptatem aliquam error quos autem quis distinctio dignissimos asperiores sapiente accusant</p>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
